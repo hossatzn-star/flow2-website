@@ -21,7 +21,7 @@ export default function Console({ section }: any) {
         style={{
           width: "1200px",
           minHeight: "600px",
-          background: "rgba(0,0,0,0.6)",
+          background: "rgba(0,0,0,0.55)",
           borderRadius: "20px",
           padding: "30px",
           display: "flex",
@@ -32,17 +32,17 @@ export default function Console({ section }: any) {
         {/* HOME PAGE — ORDINE CORRETTO */}
         {section === "home" && (
           <>
-            {/* NEWS — 50% */}
-            <div style={{ width: "50%" }}>
-              <NewsSlider />
-            </div>
-
-            {/* RANKING — 25% */}
+            {/* RANKING — LEFT */}
             <div style={{ width: "25%" }}>
               <RankingBox />
             </div>
 
-            {/* LOGIN — 25% */}
+            {/* NEWS — CENTER */}
+            <div style={{ width: "50%" }}>
+              <NewsSlider />
+            </div>
+
+            {/* LOGIN — RIGHT */}
             <div style={{ width: "25%" }}>
               <LoginBox />
             </div>

@@ -1,60 +1,52 @@
-import NewsSlider from "./NewsSlider";
-import LoginBox from "./LoginBox";
-import RankingBox from "./RankingBox";
-import RegisterForm from "./RegisterForm";
-import DownloadBox from "./DownloadBox";
-import ForumBox from "./ForumBox";
-import ShopBox from "./ShopBox";
-import SupportBox from "./SupportBox";
-
-export default function Console({ section }: any) {
+export default function LoginBox() {
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "40px"
-      }}
-    >
+    <div className="console-box">
+      <div className="box-title">Login</div>
+
+      {/* USERNAME */}
+      <label style={{ fontSize: "16px" }}>Username</label>
+      <input type="text" placeholder="Enter username" />
+
+      {/* PASSWORD */}
+      <label style={{ marginTop: "12px", fontSize: "16px" }}>Password</label>
+      <input type="password" placeholder="Enter password" />
+
+      {/* REMEMBER ME */}
       <div
         style={{
-          width: "1200px",
-          minHeight: "600px",
-          background: "rgba(0,0,0,0.6)",
-          borderRadius: "20px",
-          padding: "30px",
+          marginTop: "12px",
           display: "flex",
-          gap: "20px",
-          color: "white"
+          alignItems: "center",
+          gap: "8px",
+          fontSize: "15px"
         }}
       >
-        {/* HOME PAGE — ORDINE CORRETTO */}
-        {section === "home" && (
-          <>
-            {/* NEWS — 50% */}
-            <div style={{ width: "50%" }}>
-              <NewsSlider />
-            </div>
+        <input type="checkbox" style={{ width: "18px", height: "18px" }} />
+        <span>Remember Me</span>
+      </div>
 
-            {/* RANKING — 25% */}
-            <div style={{ width: "25%" }}>
-              <RankingBox />
-            </div>
+      {/* LOGIN BUTTON */}
+      <button style={{ marginTop: "20px" }}>
+        LOGIN
+      </button>
 
-            {/* LOGIN — 25% */}
-            <div style={{ width: "25%" }}>
-              <LoginBox />
-            </div>
-          </>
-        )}
+      {/* CREATE ACCOUNT BUTTON */}
+      <button style={{ background: "#444", color: "white" }}>
+        CREATE ACCOUNT
+      </button>
 
-        {/* ALTRE SEZIONI */}
-        {section === "register" && <RegisterForm />}
-        {section === "download" && <DownloadBox />}
-        {section === "forum" && <ForumBox />}
-        {section === "shop" && <ShopBox />}
-        {section === "support" && <SupportBox />}
+      {/* FORGOT PASSWORD */}
+      <div
+        style={{
+          marginTop: "14px",
+          textAlign: "center",
+          fontSize: "14px",
+          cursor: "pointer",
+          opacity: 0.8,
+          textShadow: "2px 2px 4px black"
+        }}
+      >
+        Forgot Password?
       </div>
     </div>
   );

@@ -1,49 +1,53 @@
-"use client";
+export default function NewsSlider() {
+  const news = [
+    {
+      title: "New Update Released!",
+      date: "April 18, 2024",
+      text: "Discover the exciting new features now available!"
+    },
+    {
+      title: "Event Schedule",
+      date: "April 10, 2024",
+      text: "Check out the upcoming events for this month!"
+    },
+    {
+      title: "Patch Notes 1.2",
+      date: "April 02, 2024",
+      text: "Read the latest patch notes and improvements."
+    }
+  ];
 
-export default function Navbar({ setSection }: any) {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "120px",
-        background: "rgba(0,0,0,0.55)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        position: "relative",
-        boxShadow: "0 4px 10px rgba(0,0,0,0.6)"
-      }}
-    >
-      {/* LOGO CENTRALE */}
-      <img
-        src="/images/logo.png"
-        alt="Flow2 Logo"
-        style={{
-          height: "90px",
-          position: "absolute",
-          left: "50%",
-          transform: "translateX(-50%)",
-          top: "15px"
-        }}
-      />
+    <div className="console-box">
+      <div className="box-title">Latest News</div>
 
-      {/* MENU */}
-      <div
-        style={{
-          display: "flex",
-          gap: "40px",
-          fontSize: "24px",
-          fontWeight: "bold",
-          textShadow: "2px 2px 4px black",
-          marginTop: "70px"
-        }}
-      >
-        <span className="nav-item" onClick={() => setSection("home")}>Home</span>
-        <span className="nav-item" onClick={() => setSection("register")}>Register</span>
-        <span className="nav-item" onClick={() => setSection("download")}>Download</span>
-        <span className="nav-item" onClick={() => setSection("forum")}>Forum</span>
-        <span className="nav-item" onClick={() => setSection("shop")}>Shop</span>
-        <span className="nav-item" onClick={() => setSection("support")}>Support</span>
+      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        {news.map((item, index) => (
+          <div
+            key={index}
+            style={{
+              paddingBottom: "15px",
+              borderBottom:
+                index !== news.length - 1
+                  ? "1px solid rgba(255,255,255,0.25)"
+                  : "none"
+            }}
+          >
+            <h3
+              style={{
+                margin: "0 0 5px 0",
+                fontSize: "20px",
+                textShadow: "2px 2px 4px black"
+              }}
+            >
+              {item.title}
+            </h3>
+
+            <small style={{ opacity: 0.8 }}>{item.date}</small>
+
+            <p style={{ marginTop: "5px", opacity: 0.9 }}>{item.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
