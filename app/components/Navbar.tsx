@@ -5,26 +5,29 @@ export default function Navbar({ setSection }: any) {
     <div
       style={{
         width: "100%",
-        height: "110px",
+        height: "120px",
+        background: "rgba(0,0,0,0.55)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "0 40px",
-        color: "white",
-        marginTop: "10px"
+        position: "relative",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.6)"
       }}
     >
-      {/* LOGO CENTRATO E DIMENSIONE CORRETTA */}
+      {/* LOGO CENTRALE */}
       <img
         src="/images/logo.png"
         alt="Flow2 Logo"
         style={{
-          height: "85px",
-          marginRight: "60px"
+          height: "90px",
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+          top: "15px"
         }}
       />
 
-      {/* MENU CENTRATO E SPAZIATO */}
+      {/* MENU */}
       <div
         style={{
           display: "flex",
@@ -32,26 +35,15 @@ export default function Navbar({ setSection }: any) {
           fontSize: "24px",
           fontWeight: "bold",
           textShadow: "2px 2px 4px black",
+          marginTop: "70px"
         }}
       >
-        <span className="nav-item" onClick={() => setSection("home")}>
-          Home
-        </span>
-        <span className="nav-item" onClick={() => setSection("register")}>
-          Register
-        </span>
-        <span className="nav-item" onClick={() => setSection("download")}>
-          Download
-        </span>
-        <span className="nav-item" onClick={() => setSection("forum")}>
-          Forum
-        </span>
-        <span className="nav-item" onClick={() => setSection("shop")}>
-          Shop
-        </span>
-        <span className="nav-item" onClick={() => setSection("support")}>
-          Support
-        </span>
+        <span className="nav-item" onClick={() => setSection("home")}>Home</span>
+        <span className="nav-item" onClick={() => setSection("register")}>Register</span>
+        <span className="nav-item" onClick={() => setSection("download")}>Download</span>
+        <span className="nav-item" onClick={() => setSection("forum")}>Forum</span>
+        <span className="nav-item" onClick={() => setSection("shop")}>Shop</span>
+        <span className="nav-item" onClick={() => setSection("support")}>Support</span>
       </div>
     </div>
   );
