@@ -1,9 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html, body {
+body {
   margin: 0;
   padding: 0;
-  background: #000; /* Nero di base se l'immagine fallisce */
+  overflow-x: hidden;
+  font-family: 'Cinzel', serif;
+}
+
+.background-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+}
+
+.bg-left {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bg-right {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-overlay {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
