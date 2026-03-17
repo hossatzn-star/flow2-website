@@ -10,8 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="it">
       <body>
         <div className="background-container">
-          <img src="/images/bg_left.jpg" className="bg-left" />
-          <img src="/images/bg_right.jpg" className="bg-right" />
+          <img src="/images/bg.png" alt="background" />
         </div>
 
         <div className="content-overlay">

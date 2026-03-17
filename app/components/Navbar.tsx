@@ -4,24 +4,32 @@ export default function Navbar({ setSection }: any) {
   return (
     <div style={{
       width: "100%",
-      height: "80px",
+      height: "100px",
       display: "flex",
       alignItems: "center",
-      justifyContent: "center",
-      gap: "40px",
-      background: "rgba(0,0,0,0.4)",
+      justifyContent: "space-between",
+      padding: "0 40px",
+      background: "rgba(0,0,0,0.5)",
       backdropFilter: "blur(4px)",
-      color: "white",
-      fontSize: "22px",
-      fontWeight: "bold",
-      textShadow: "2px 2px 4px black"
+      color: "white"
     }}>
-      <span onClick={() => setSection("home")} className="nav-item">Home</span>
-      <span onClick={() => setSection("register")} className="nav-item">Register</span>
-      <span onClick={() => setSection("download")} className="nav-item">Download</span>
-      <span onClick={() => setSection("forum")} className="nav-item">Forum</span>
-      <span onClick={() => setSection("shop")} className="nav-item">Shop</span>
-      <span onClick={() => setSection("support")} className="nav-item">Support</span>
+      
+      <img src="/images/logo.png" alt="Flow2 Logo" style={{ height: "70px" }} />
+
+      <div style={{
+        display: "flex",
+        gap: "40px",
+        fontSize: "22px",
+        fontWeight: "bold",
+        textShadow: "2px 2px 4px black"
+      }}>
+        <span className="nav-item" onClick={() => setSection("home")}>Home</span>
+        <span className="nav-item" onClick={() => setSection("register")}>Register</span>
+        <span className="nav-item" onClick={() => setSection("download")}>Download</span>
+        <span className="nav-item" onClick={() => setSection("forum")}>Forum</span>
+        <span className="nav-item" onClick={() => setSection("shop")}>Shop</span>
+        <span className="nav-item" onClick={() => setSection("support")}>Support</span>
+      </div>
     </div>
   );
 }

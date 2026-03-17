@@ -25,12 +25,20 @@ export default function Console({ section }: any) {
         gap: "20px",
         color: "white"
       }}>
-        
+
         {section === "home" && (
           <>
-            <NewsSlider />
-            <RankingBox />
-            <LoginBox />
+            <div style={{ width: "50%" }}>
+              <NewsSlider />
+            </div>
+
+            <div style={{ width: "25%" }}>
+              <RankingBox />
+            </div>
+
+            <div style={{ width: "25%" }}>
+              <LoginBox />
+            </div>
           </>
         )}
 
