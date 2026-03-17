@@ -9,39 +9,47 @@ import SupportBox from "./SupportBox";
 
 export default function Console({ section }: any) {
   return (
-    <div style={{
-      width: "100%",
-      display: "flex",
-      justifyContent: "center",
-      marginTop: "40px"
-    }}>
-      <div style={{
-        width: "1200px",
-        minHeight: "600px",
-        background: "rgba(0,0,0,0.6)",
-        borderRadius: "20px",
-        padding: "30px",
+    <div
+      style={{
+        width: "100%",
         display: "flex",
-        gap: "20px",
-        color: "white"
-      }}>
-
+        justifyContent: "center",
+        marginTop: "40px"
+      }}
+    >
+      <div
+        style={{
+          width: "1200px",
+          minHeight: "600px",
+          background: "rgba(0,0,0,0.6)",
+          borderRadius: "20px",
+          padding: "30px",
+          display: "flex",
+          gap: "20px",
+          color: "white"
+        }}
+      >
+        {/* HOME PAGE — ORDINE CORRETTO */}
         {section === "home" && (
           <>
+            {/* NEWS — 50% */}
             <div style={{ width: "50%" }}>
               <NewsSlider />
             </div>
 
+            {/* RANKING — 25% */}
             <div style={{ width: "25%" }}>
               <RankingBox />
             </div>
 
+            {/* LOGIN — 25% */}
             <div style={{ width: "25%" }}>
               <LoginBox />
             </div>
           </>
         )}
 
+        {/* ALTRE SEZIONI */}
         {section === "register" && <RegisterForm />}
         {section === "download" && <DownloadBox />}
         {section === "forum" && <ForumBox />}

@@ -1,45 +1,61 @@
-export default function LoginBox() {
+import NewsSlider from "./NewsSlider";
+import LoginBox from "./LoginBox";
+import RankingBox from "./RankingBox";
+import RegisterForm from "./RegisterForm";
+import DownloadBox from "./DownloadBox";
+import ForumBox from "./ForumBox";
+import ShopBox from "./ShopBox";
+import SupportBox from "./SupportBox";
+
+export default function Console({ section }: any) {
   return (
-    <div style={{
-      width: "25%",
-      background: "rgba(20,20,20,0.7)",
-      borderRadius: "15px",
-      padding: "20px"
-    }}>
-      <h2>Login</h2>
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "40px"
+      }}
+    >
+      <div
+        style={{
+          width: "1200px",
+          minHeight: "600px",
+          background: "rgba(0,0,0,0.6)",
+          borderRadius: "20px",
+          padding: "30px",
+          display: "flex",
+          gap: "20px",
+          color: "white"
+        }}
+      >
+        {/* HOME PAGE — ORDINE CORRETTO */}
+        {section === "home" && (
+          <>
+            {/* NEWS — 50% */}
+            <div style={{ width: "50%" }}>
+              <NewsSlider />
+            </div>
 
-      <input placeholder="Username" style={{ width: "100%", padding: "10px", marginTop: "10px" }} />
-      <input placeholder="Password" type="password" style={{ width: "100%", padding: "10px", marginTop: "10px" }} />
+            {/* RANKING — 25% */}
+            <div style={{ width: "25%" }}>
+              <RankingBox />
+            </div>
 
-      <div style={{ marginTop: "10px" }}>
-        <input type="checkbox" /> Remember Me
+            {/* LOGIN — 25% */}
+            <div style={{ width: "25%" }}>
+              <LoginBox />
+            </div>
+          </>
+        )}
+
+        {/* ALTRE SEZIONI */}
+        {section === "register" && <RegisterForm />}
+        {section === "download" && <DownloadBox />}
+        {section === "forum" && <ForumBox />}
+        {section === "shop" && <ShopBox />}
+        {section === "support" && <SupportBox />}
       </div>
-
-      <button style={{
-        width: "100%",
-        padding: "10px",
-        marginTop: "20px",
-        background: "#ffcc00",
-        border: "none",
-        fontWeight: "bold"
-      }}>
-        LOGIN
-      </button>
-
-      <button style={{
-        width: "100%",
-        padding: "10px",
-        marginTop: "10px",
-        background: "#333",
-        border: "none",
-        color: "white"
-      }}>
-        CREATE ACCOUNT
-      </button>
-
-      <p style={{ marginTop: "10px", color: "#aaa", cursor: "pointer" }}>
-        Forgot Password?
-      </p>
     </div>
   );
 }

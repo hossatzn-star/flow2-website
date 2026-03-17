@@ -1,14 +1,9 @@
 export default function RankingBox() {
   return (
-    <div style={{
-      width: "25%",
-      background: "rgba(20,20,20,0.7)",
-      borderRadius: "15px",
-      padding: "20px"
-    }}>
-      <h2>Top Players</h2>
+    <div className="console-box">
+      <div className="box-title">Top Players</div>
 
-      <ul style={{ marginTop: "20px", listStyle: "none", padding: 0 }}>
+      <ul>
         <li>1. Drakon - LV 99</li>
         <li>2. Celestia - LV 95</li>
         <li>3. ShadowWolf - LV 92</li>
